@@ -1,9 +1,18 @@
-const city = "kigali";
 const api_key = "d1613c04ca574939968172503232208";
 const listData = document.querySelector('.list');
 const img = document.querySelector('img');
+const searchBtn = document.querySelector('#search-btn');
+const searchInput = document.querySelector('#search-input');
 
-getWeatherData(city);
+searchBtn.addEventListener('click', () => {
+    listData.textContent = "";
+    const city = searchInput.value;
+    console.log(city);
+    getWeatherData(city);
+    searchInput.value = "";
+});
+
+
 
 async function getWeatherData(location) {
     try {
@@ -12,11 +21,11 @@ async function getWeatherData(location) {
         const weatherData = await reponse.json();
         const extractedData = processData(weatherData);
         
-        console.log(extractedData);
         img.src = extractedData.icon;
         for (const key in extractedData) {
             if (key != 'icon') {
                 const list = document.createElement('ul');
+                list.classList.add('unordered');
                 list.textContent = `${key}: ${extractedData[key]}`;
                 listData.appendChild(list);
             }
