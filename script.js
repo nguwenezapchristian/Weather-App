@@ -1,5 +1,7 @@
 const city = "kigali";
 const api_key = "d1613c04ca574939968172503232208";
+const listData = document.querySelector('.list');
+const img = document.querySelector('img');
 
 getWeatherData(city);
 
@@ -11,6 +13,14 @@ async function getWeatherData(location) {
         const extractedData = processData(weatherData);
         
         console.log(extractedData);
+        img.src = extractedData.icon;
+        for (const key in extractedData) {
+            if (key != 'icon') {
+                const list = document.createElement('ul');
+                list.textContent = `${key}: ${extractedData[key]}`;
+                listData.appendChild(list);
+            }
+        };
     } catch (err) {
         if (err == 'Parameter q is missing.') {
             console.log('input the location');
