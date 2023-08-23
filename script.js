@@ -7,7 +7,6 @@ const searchInput = document.querySelector('#search-input');
 searchBtn.addEventListener('click', () => {
     listData.textContent = "";
     const city = searchInput.value;
-    console.log(city);
     getWeatherData(city);
     searchInput.value = "";
 });
@@ -31,10 +30,11 @@ async function getWeatherData(location) {
             }
         };
     } catch (err) {
-        if (err == 'Parameter q is missing.') {
-            console.log('input the location');
+        if (err == 'TypeError') {
+            console.log('input a place name');
+        } else {
+            console.log(err);
         }
-        console.log(err);
     }
 }
 
