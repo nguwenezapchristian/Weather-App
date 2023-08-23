@@ -3,11 +3,10 @@
     padding: 0;
     /* background-color: #87CEEB; */
     /* border: 2px solid #FFD700; */
-    color: white;
     text-align: center;
 }
 body {
-    background-color: grey;
+    background-color: rgba(0, 0, 0, 0.379);
 }
 header {
     font-size: 25px;
@@ -17,6 +16,7 @@ header {
     color: #FFD700;
     border-radius: 5px;
     border: 2px solid #FFD700;
+    margin: 2px;
 }
 .search-div {
     padding: 5px 0;
