@@ -9,20 +9,53 @@
 body {
     background-color: grey;
 }
+header {
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #FFD700;
+    border-radius: 5px;
+    border: 2px solid #FFD700;
+}
+.search-div {
+    padding: 5px 0;
+    border: 2px solid #FFD700;
+}
+img {
+    margin: 5px 0;
+}
 li {
     list-style: none;
 }
 .unordered {
-    margin: 5px 0;
     padding: 5px 0;
     font-size: 20px;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: black;
+    margin: 2px 2px;
 }
 .container {
     background-color: black;
+    border: 2px solid #FFD700;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 500px;
+    height: 490px;
+    border-radius: 10px;
+}
+#search-input {
+    color: black;
+    border-radius: 5px;
+    padding: 2px 0;
+    background-color: #FFD700;
+}
+#search-btn {
+    color: grey;
+    padding: 2px 2px;
+    border-radius: 5px;
+    background-color: #FFD700;
 }
